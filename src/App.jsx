@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import Counter from './features/counter/Counter';
 
 function App() {
 
+  /* Render <Counter /> component */
   return (
         <main className="App">
-          <h1>App</h1>
+          <Counter />
         </main>
   )
 }
