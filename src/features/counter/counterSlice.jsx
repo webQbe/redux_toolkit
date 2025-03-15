@@ -16,11 +16,19 @@ export const counterSlice = createSlice({
         },
         decrement: (state) => {
             state.count -= 1; // Decreases count by 1.
+        },
+        /* reset reducer */
+        reset: (state) => { 
+            state.count = 0; // Resets count to 0 when dispatched
+        },
+        /* incrementByAmount reducer */
+        incrementByAmount: (state, action) => {
+            state.count += action.payload; // Increments count by the payload value received from the action
         }
     }
 });
 
-// increment and decrement actions are exported so components can dispatch them
-export const { increment, decrement } = counterSlice.actions;
+// Actions are exported so components can dispatch them
+export const { increment, decrement, reset, incrementByAmount } = counterSlice.actions;
 
 export default counterSlice.reducer;
